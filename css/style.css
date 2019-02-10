@@ -1,0 +1,29 @@
+@keyframes spin {
+    from {
+      transform: scale(0) rotate(0deg);
+      opacity: 1;
+    }
+    to {
+      transform: scale(1) rotate(359deg);
+      opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#rose {
+  animation: spin 12s ease-out;
+}
+
+.phrase {
+  animation: fadeIn 4s ease-out;
+}
