@@ -27,7 +27,7 @@
         overflow: 'hidden'
       }
     });
-    let headline, spawnInterval, roses, phrase1, phrase2, phrase1Timeout, phrase2Timeout;
+    let spawnInterval, roses, phrase1, phrase2, phrase3, phrase1Timeout, phrase2Timeout, phrase3Timeout;
     const cont = c('div', document.body);
     class Rose {
       constructor() {
@@ -48,28 +48,14 @@
       clearInterval(spawnInterval);
       clearTimeout(phrase1Timeout);
       clearTimeout(phrase2Timeout);
+      clearTimeout(phrase3Timeout);
       cont.innerHTML = '';
-      headline = c('h1', cont, {
-        innerText: 'Alles Gute zum Valentinstag Svenja',
-        style: {
-          textDecoration: 'underline',
-          top: '10vh',
-          position: 'absolute',
-          width: '100%',
-          color: 'gold',
-          fontSize: '6vw',
-          fontWeight: 'normal',
-          textShadow: '2px 2px 2px black',
-          textAlign: 'center',
-          zIndex: '1'
-        }
-      });
       phrase1Timeout = setTimeout(() => {
         phrase1 = c('p', cont, {
           className: 'phrase',
           innerText: 'Weißt du, was mich glücklich macht?',
           style: {
-            top: '30vh',
+            top: '10vh',
             position: 'absolute',
             width: '100%',
             fontSize: '6vw',
@@ -79,14 +65,14 @@
             zIndex: '1'
           }
         });
-      }, 5000);
+      }, 3000);
       phrase2Timeout = setTimeout(() => {
         phrase2 = c('p', cont, {
           className: 'phrase',
           innerText: 'Dann lies das zweite Wort nochmal  :D',
           style: {
             whiteSpace: 'pre',
-            top: '45vh',
+            top: '25vh',
             position: 'absolute',
             width: '100%',
             fontSize: '6vw',
@@ -96,7 +82,24 @@
             zIndex: '1'
           }
         });
-      }, 10000);
+      }, 8000);
+      phrase3Timeout = setTimeout(() => {
+        phrase3 = c('h1', cont, {
+          className: 'phrase',
+          innerText: 'Alles Gute zum Valentinstag Svenja',
+          style: {
+            top: '50vh',
+            position: 'absolute',
+            width: '100%',
+            color: 'gold',
+            fontSize: '6vw',
+            fontWeight: 'normal',
+            textShadow: '2px 2px 2px black',
+            textAlign: 'center',
+            zIndex: '1'
+          }
+        });
+      }, 15000);
       roses = [];
       roses.push(new Rose());
       spawnInterval = setInterval(() => {
